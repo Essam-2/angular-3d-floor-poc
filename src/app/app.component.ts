@@ -12,7 +12,7 @@ import { Floor3dComponent } from './components/floor-3d/floor-3d.component';
           <h1>3D Interactive Floor Dashboard POC</h1>
           <p>Explore the floor, click devices, drag them, and watch fake live statuses update.</p>
         </div>
-      </section>
+      </section> 
 
       <app-floor-3d />
     </main>
