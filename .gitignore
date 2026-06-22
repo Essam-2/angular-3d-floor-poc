@@ -1,0 +1,25 @@
+# Dependencies
+/node_modules
+
+# Angular build and cache output
+/dist
+/.angular
+
+# IDE and OS files
+/.idea
+/.vscode/*
+!/.vscode/extensions.json
+!/.vscode/launch.json
+!/.vscode/tasks.json
+!/.vscode/settings.json
+.DS_Store
+Thumbs.db
+
+# Logs and test output
+*.log
+/coverage
+
+# Local environment files
+.env
+.env.*
+!.env.example

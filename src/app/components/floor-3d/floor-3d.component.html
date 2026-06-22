@@ -1,0 +1,29 @@
+<div class="layout">
+  <div class="viewer-card">
+    <div #viewer class="viewer"></div>
+    <div class="help">Mouse: rotate / zoom / pan. Click device to select. Drag selected device on the floor.</div>
+  </div>
+
+  <aside class="panel">
+    <h2>Devices</h2>
+    <button (click)="addRandomDevice()">+ Add device</button>
+
+    <div class="device-list">
+      <div class="device" *ngFor="let device of devices" [class.selected]="selectedDevice?.id === device.id" (click)="focusDevice(device.id)">
+        <strong>{{ device.name }}</strong>
+        <span [class.online]="device.status === 'online'" [class.offline]="device.status === 'offline'" [class.alarm]="device.status === 'alarm'">
+          {{ device.status }}
+        </span>
+        <small>x: {{ device.x | number:'1.1-1' }}, z: {{ device.z | number:'1.1-1' }}</small>
+      </div>
+    </div>
+
+    <ng-container *ngIf="selectedDevice as device">
+      <hr>
+      <h3>Selected</h3>
+      <p><b>{{ device.name }}</b></p>
+      <p>Status: {{ device.status }}</p>
+      <p>Position: {{ device.x | number:'1.1-1' }}, {{ device.z | number:'1.1-1' }}</p>
+    </ng-container>
+  </aside>
+</div>
